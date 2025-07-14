@@ -10,11 +10,7 @@
  "field_order": [
   "type_acte",
   "titre",
-  "text",
-  "is_stock_item",
-  "is_sales_item",
-  "default_price_list_rate",
-  "default_sales_uom"
+  "text"
  ],
  "fields": [
   {
@@ -29,30 +25,6 @@
    "options": "type_acte"
   },
   {
-   "default": "0",
-   "fieldname": "is_stock_item",
-   "fieldtype": "Check",
-   "hidden": 1,
-   "label": "stockable"
-  },
-  {
-   "default": "1",
-   "fieldname": "is_sales_item",
-   "fieldtype": "Check",
-   "label": "article de vente"
-  },
-  {
-   "fieldname": "default_price_list_rate",
-   "fieldtype": "Currency",
-   "label": "Prix par d\u00e9faut"
-  },
-  {
-   "fieldname": "default_sales_uom",
-   "fieldtype": "Link",
-   "label": "Unit\u00e9",
-   "options": "UOM"
-  },
-  {
    "fieldname": "titre",
    "fieldtype": "Data",
    "label": "Nom du mod\u00e8le"
@@ -61,7 +33,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-13 21:58:51.783180",
+ "modified": "2025-07-14 22:34:36.300589",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "Actes_modeles",
