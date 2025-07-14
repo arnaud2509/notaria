@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotarIA Frontend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mes Actes Notariés</h1>
+
+        <div class="add-acte">
+            <h2>Ajouter un nouvel acte</h2>
+            <select id="typeActe">
+                <option value="">Chargement des types d'acte...</option>
+            </select>
+            <select id="affaireNotariale">
+                <option value="">Chargement des affaires notariales...</option>
+            </select>
+            <input type="text" id="acteTitle" placeholder="Titre de l'acte (obligatoire)">
+            <textarea id="acteDescription" placeholder="Contenu de l'acte (obligatoire)"></textarea>
+            <button id="addActeBtn">Ajouter l'acte</button>
+        </div>
+
+        <div class="actes-list">
+            <h2>Liste des actes</h2>
+            <ul id="actesList">
+                <li>Chargement des actes...</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
