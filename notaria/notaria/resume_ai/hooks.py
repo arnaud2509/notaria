@@ -1,7 +1,7 @@
-app_name = "notaria"
-app_title = "NotarIA"
-app_publisher = "Arncla"
-app_description = "Application pour les notaires"
+app_name = "resume_ai"
+app_title = "Resume AI"
+app_publisher = "ME"
+app_description = "Ai that resume legal documents"
 app_email = "claivaz.arnaud25@gmail.com"
 app_license = "mit"
 
@@ -13,11 +13,11 @@ app_license = "mit"
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{
-# 		"name": "notaria",
-# 		"logo": "/assets/notaria/logo.png",
-# 		"title": "NotarIA",
-# 		"route": "/notaria",
-# 		"has_permission": "notaria.api.permission.has_app_permission"
+# 		"name": "resume_ai",
+# 		"logo": "/assets/resume_ai/logo.png",
+# 		"title": "Resume AI",
+# 		"route": "/resume_ai",
+# 		"has_permission": "resume_ai.api.permission.has_app_permission"
 # 	}
 # ]
 
@@ -25,15 +25,15 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/notaria/css/notaria.css"
-# app_include_js = "/assets/notaria/js/notaria.js"
+# app_include_css = "/assets/resume_ai/css/resume_ai.css"
+# app_include_js = "/assets/resume_ai/js/resume_ai.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/notaria/css/notaria.css"
-# web_include_js = "/assets/notaria/js/notaria.js"
+# web_include_css = "/assets/resume_ai/css/resume_ai.css"
+# web_include_js = "/assets/resume_ai/js/resume_ai.js"
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "notaria/public/scss/website"
+# website_theme_scss = "resume_ai/public/scss/website"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -51,7 +51,7 @@ app_license = "mit"
 # Svg Icons
 # ------------------
 # include app icons in desk
-# app_include_icons = "notaria/public/icons.svg"
+# app_include_icons = "resume_ai/public/icons.svg"
 
 # Home Pages
 # ----------
@@ -75,43 +75,43 @@ app_license = "mit"
 
 # add methods and filters to jinja environment
 # jinja = {
-# 	"methods": "notaria.utils.jinja_methods",
-# 	"filters": "notaria.utils.jinja_filters"
+# 	"methods": "resume_ai.utils.jinja_methods",
+# 	"filters": "resume_ai.utils.jinja_filters"
 # }
 
 # Installation
 # ------------
 
-# before_install = "notaria.install.before_install"
-# after_install = "notaria.install.after_install"
+# before_install = "resume_ai.install.before_install"
+# after_install = "resume_ai.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "notaria.uninstall.before_uninstall"
-# after_uninstall = "notaria.uninstall.after_uninstall"
+# before_uninstall = "resume_ai.uninstall.before_uninstall"
+# after_uninstall = "resume_ai.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------
 # To set up dependencies/integrations with other apps
 # Name of the app being installed is passed as an argument
 
-# before_app_install = "notaria.utils.before_app_install"
-# after_app_install = "notaria.utils.after_app_install"
+# before_app_install = "resume_ai.utils.before_app_install"
+# after_app_install = "resume_ai.utils.after_app_install"
 
 # Integration Cleanup
 # -------------------
 # To clean up dependencies/integrations with other apps
 # Name of the app being uninstalled is passed as an argument
 
-# before_app_uninstall = "notaria.utils.before_app_uninstall"
-# after_app_uninstall = "notaria.utils.after_app_uninstall"
+# before_app_uninstall = "resume_ai.utils.before_app_uninstall"
+# after_app_uninstall = "resume_ai.utils.after_app_uninstall"
 
 # Desk Notifications
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "notaria.notifications.get_notification_config"
+# notification_config = "resume_ai.notifications.get_notification_config"
 
 # Permissions
 # -----------
@@ -150,39 +150,39 @@ app_license = "mit"
 
 # scheduler_events = {
 # 	"all": [
-# 		"notaria.tasks.all"
+# 		"resume_ai.tasks.all"
 # 	],
 # 	"daily": [
-# 		"notaria.tasks.daily"
+# 		"resume_ai.tasks.daily"
 # 	],
 # 	"hourly": [
-# 		"notaria.tasks.hourly"
+# 		"resume_ai.tasks.hourly"
 # 	],
 # 	"weekly": [
-# 		"notaria.tasks.weekly"
+# 		"resume_ai.tasks.weekly"
 # 	],
 # 	"monthly": [
-# 		"notaria.tasks.monthly"
+# 		"resume_ai.tasks.monthly"
 # 	],
 # }
 
 # Testing
 # -------
 
-# before_tests = "notaria.install.before_tests"
+# before_tests = "resume_ai.install.before_tests"
 
 # Overriding Methods
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "notaria.event.get_events"
+# 	"frappe.desk.doctype.event.event.get_events": "resume_ai.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-# 	"Task": "notaria.task.get_dashboard_data"
+# 	"Task": "resume_ai.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -196,13 +196,13 @@ app_license = "mit"
 
 # Request Events
 # ----------------
-# before_request = ["notaria.utils.before_request"]
-# after_request = ["notaria.utils.after_request"]
+# before_request = ["resume_ai.utils.before_request"]
+# after_request = ["resume_ai.utils.after_request"]
 
 # Job Events
 # ----------
-# before_job = ["notaria.utils.before_job"]
-# after_job = ["notaria.utils.after_job"]
+# before_job = ["resume_ai.utils.before_job"]
+# after_job = ["resume_ai.utils.after_job"]
 
 # User Data Protection
 # --------------------
@@ -232,7 +232,7 @@ app_license = "mit"
 # --------------------------------
 
 # auth_hooks = [
-# 	"notaria.auth.validate"
+# 	"resume_ai.auth.validate"
 # ]
 
 # Automatically update python controller files with type annotations for this app.
@@ -241,8 +241,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
-fixtures = [
-
-	"Custom HTML Block"
-]

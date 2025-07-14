@@ -1,0 +1,22 @@
+{
+ "content": null,
+ "creation": "2025-06-29 16:49:24.463359",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2025-06-29 16:49:24.463359",
+ "modified_by": "Administrator",
+ "module": "NotarIA",
+ "name": "test",
+ "owner": "Administrator",
+ "page_name": "test",
+ "roles": [
+  {
+   "role": "Analytics"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0
+}

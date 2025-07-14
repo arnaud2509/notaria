@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-05 10:30:10.993576",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_nesy",
+  "property_name",
+  "property_reference",
+  "column_break_bwdy",
+  "full_address",
+  "section_break_azkp",
+  "housing_type",
+  "year_of_construction",
+  "column_break_qhxk",
+  "building_area_sqm",
+  "current_owner",
+  "section_break_kjht",
+  "uid_number",
+  "cadastral_info",
+  "cadastral_plan_attachment",
+  "section_break_xhep",
+  "current_market_value",
+  "encumbrances_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "property_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom du Bien",
+   "reqd": 1
+  },
+  {
+   "fieldname": "property_reference",
+   "fieldtype": "Data",
+   "label": "R\u00e9f\u00e9rence Interne du Bien",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "full_address",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "Adresse Compl\u00e8te",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cadastral_info",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Informations Cadastrales",
+   "reqd": 1
+  },
+  {
+   "fieldname": "uid_number",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro UID Foncier"
+  },
+  {
+   "fieldname": "building_area_sqm",
+   "fieldtype": "Int",
+   "label": "Surface B\u00e2tie en m\u00b2"
+  },
+  {
+   "fieldname": "housing_type",
+   "fieldtype": "Select",
+   "label": "Type d'Habitation",
+   "options": "Appartement\nMaison Individuelle\nVilla\nImmeuble de rapport\nTerrain nu\nLocal Commercial\nAutre"
+  },
+  {
+   "fieldname": "year_of_construction",
+   "fieldtype": "Int",
+   "label": "Ann\u00e9e de Construction"
+  },
+  {
+   "fieldname": "current_owner",
+   "fieldtype": "Link",
+   "label": "Propri\u00e9taire Actuel",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "section_break_nesy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "current_market_value",
+   "fieldtype": "Currency",
+   "label": "Valeur Marchande Actuelle"
+  },
+  {
+   "fieldname": "encumbrances_details",
+   "fieldtype": "Text",
+   "label": "D\u00e9tails des Charges et Servitudes"
+  },
+  {
+   "fieldname": "cadastral_plan_attachment",
+   "fieldtype": "Attach",
+   "label": "Plan Cadastral"
+  },
+  {
+   "fieldname": "column_break_bwdy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_azkp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_qhxk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_kjht",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_xhep",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-05 10:54:15.836928",
+ "modified_by": "Administrator",
+ "module": "NotarIA",
+ "name": "Bien Immobilier",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

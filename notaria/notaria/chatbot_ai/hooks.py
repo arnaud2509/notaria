@@ -1,9 +1,11 @@
-app_name = "notaria"
-app_title = "NotarIA"
-app_publisher = "Arncla"
-app_description = "Application pour les notaires"
+app_name = "chatbot_ai"
+app_title = "AI CHATBOT"
+app_publisher = "ME"
+app_description = "Chatbot for ERPNEXT"
 app_email = "claivaz.arnaud25@gmail.com"
 app_license = "mit"
+
+app_include_js = "/assets/chatbot_ai/js/chat.js"
 
 # Apps
 # ------------------
@@ -13,11 +15,11 @@ app_license = "mit"
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{
-# 		"name": "notaria",
-# 		"logo": "/assets/notaria/logo.png",
-# 		"title": "NotarIA",
-# 		"route": "/notaria",
-# 		"has_permission": "notaria.api.permission.has_app_permission"
+# 		"name": "chatbot_ai",
+# 		"logo": "/assets/chatbot_ai/logo.png",
+# 		"title": "AI CHATBOT",
+# 		"route": "/chatbot_ai",
+# 		"has_permission": "chatbot_ai.api.permission.has_app_permission"
 # 	}
 # ]
 
@@ -25,15 +27,15 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/notaria/css/notaria.css"
-# app_include_js = "/assets/notaria/js/notaria.js"
+# app_include_css = "/assets/chatbot_ai/css/chatbot_ai.css"
+# app_include_js = "/assets/chatbot_ai/js/chatbot_ai.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/notaria/css/notaria.css"
-# web_include_js = "/assets/notaria/js/notaria.js"
+# web_include_css = "/assets/chatbot_ai/css/chatbot_ai.css"
+# web_include_js = "/assets/chatbot_ai/js/chatbot_ai.js"
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "notaria/public/scss/website"
+# website_theme_scss = "chatbot_ai/public/scss/website"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -51,7 +53,7 @@ app_license = "mit"
 # Svg Icons
 # ------------------
 # include app icons in desk
-# app_include_icons = "notaria/public/icons.svg"
+# app_include_icons = "chatbot_ai/public/icons.svg"
 
 # Home Pages
 # ----------
@@ -75,43 +77,43 @@ app_license = "mit"
 
 # add methods and filters to jinja environment
 # jinja = {
-# 	"methods": "notaria.utils.jinja_methods",
-# 	"filters": "notaria.utils.jinja_filters"
+# 	"methods": "chatbot_ai.utils.jinja_methods",
+# 	"filters": "chatbot_ai.utils.jinja_filters"
 # }
 
 # Installation
 # ------------
 
-# before_install = "notaria.install.before_install"
-# after_install = "notaria.install.after_install"
+# before_install = "chatbot_ai.install.before_install"
+# after_install = "chatbot_ai.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "notaria.uninstall.before_uninstall"
-# after_uninstall = "notaria.uninstall.after_uninstall"
+# before_uninstall = "chatbot_ai.uninstall.before_uninstall"
+# after_uninstall = "chatbot_ai.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------
 # To set up dependencies/integrations with other apps
 # Name of the app being installed is passed as an argument
 
-# before_app_install = "notaria.utils.before_app_install"
-# after_app_install = "notaria.utils.after_app_install"
+# before_app_install = "chatbot_ai.utils.before_app_install"
+# after_app_install = "chatbot_ai.utils.after_app_install"
 
 # Integration Cleanup
 # -------------------
 # To clean up dependencies/integrations with other apps
 # Name of the app being uninstalled is passed as an argument
 
-# before_app_uninstall = "notaria.utils.before_app_uninstall"
-# after_app_uninstall = "notaria.utils.after_app_uninstall"
+# before_app_uninstall = "chatbot_ai.utils.before_app_uninstall"
+# after_app_uninstall = "chatbot_ai.utils.after_app_uninstall"
 
 # Desk Notifications
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "notaria.notifications.get_notification_config"
+# notification_config = "chatbot_ai.notifications.get_notification_config"
 
 # Permissions
 # -----------
@@ -150,39 +152,39 @@ app_license = "mit"
 
 # scheduler_events = {
 # 	"all": [
-# 		"notaria.tasks.all"
+# 		"chatbot_ai.tasks.all"
 # 	],
 # 	"daily": [
-# 		"notaria.tasks.daily"
+# 		"chatbot_ai.tasks.daily"
 # 	],
 # 	"hourly": [
-# 		"notaria.tasks.hourly"
+# 		"chatbot_ai.tasks.hourly"
 # 	],
 # 	"weekly": [
-# 		"notaria.tasks.weekly"
+# 		"chatbot_ai.tasks.weekly"
 # 	],
 # 	"monthly": [
-# 		"notaria.tasks.monthly"
+# 		"chatbot_ai.tasks.monthly"
 # 	],
 # }
 
 # Testing
 # -------
 
-# before_tests = "notaria.install.before_tests"
+# before_tests = "chatbot_ai.install.before_tests"
 
 # Overriding Methods
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "notaria.event.get_events"
+# 	"frappe.desk.doctype.event.event.get_events": "chatbot_ai.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-# 	"Task": "notaria.task.get_dashboard_data"
+# 	"Task": "chatbot_ai.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -196,13 +198,13 @@ app_license = "mit"
 
 # Request Events
 # ----------------
-# before_request = ["notaria.utils.before_request"]
-# after_request = ["notaria.utils.after_request"]
+# before_request = ["chatbot_ai.utils.before_request"]
+# after_request = ["chatbot_ai.utils.after_request"]
 
 # Job Events
 # ----------
-# before_job = ["notaria.utils.before_job"]
-# after_job = ["notaria.utils.after_job"]
+# before_job = ["chatbot_ai.utils.before_job"]
+# after_job = ["chatbot_ai.utils.after_job"]
 
 # User Data Protection
 # --------------------
@@ -232,7 +234,7 @@ app_license = "mit"
 # --------------------------------
 
 # auth_hooks = [
-# 	"notaria.auth.validate"
+# 	"chatbot_ai.auth.validate"
 # ]
 
 # Automatically update python controller files with type annotations for this app.
@@ -242,7 +244,3 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
-fixtures = [
-
-	"Custom HTML Block"
-]

@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:nom",
+ "creation": "2025-07-03 11:58:12.229808",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "actif",
+  "nom",
+  "description",
+  "variable",
+  "type_juridique",
+  "code_type_acte",
+  "select"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "actif",
+   "fieldtype": "Check",
+   "label": "Acte actif"
+  },
+  {
+   "fieldname": "nom",
+   "fieldtype": "Data",
+   "label": "Nom du type d\u2019acte ",
+   "unique": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "variable",
+   "fieldtype": "Table",
+   "label": "variable",
+   "options": "Type Acte Variable"
+  },
+  {
+   "fieldname": "type_juridique",
+   "fieldtype": "Select",
+   "label": "Type juridique",
+   "options": "Patrimonial\nSuccessoral\nSoci\u00e9t\u00e9\nMatrimonial\nObligations\nGouvernance"
+  },
+  {
+   "fieldname": "code_type_acte",
+   "fieldtype": "Data",
+   "label": "Code interne"
+  },
+  {
+   "fieldname": "select",
+   "fieldtype": "Select",
+   "label": "Domaine d'application",
+   "options": "Immobilier\nFamille\nSuccession\nSoci\u00e9t\u00e9\nCommercial\nPouvoir / Procuration\nContrat\nFiscalit\u00e9\nDivers"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-03 11:58:12.229808",
+ "modified_by": "Administrator",
+ "module": "NotarIA",
+ "name": "type_acte",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

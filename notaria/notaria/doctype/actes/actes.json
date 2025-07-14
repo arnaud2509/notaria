@@ -1,0 +1,304 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:acte_reference_number",
+ "creation": "2025-07-03 11:58:53.454474",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "d\u00e9tails_tab",
+  "identification_de_lacte_section",
+  "affaire_notariale",
+  "title",
+  "type_acte",
+  "column_break_camo",
+  "status_acte",
+  "acte_reference_number",
+  "creation_date",
+  "section_break_qora",
+  "expected_signature_date",
+  "column_break_pouc",
+  "actual_signature_date",
+  "registration_date",
+  "section_break_zgwv",
+  "involved_properties",
+  "sb_contract",
+  "acte_modeles",
+  "contenu_acte",
+  "section_break_ijvo",
+  "ia_suggestions",
+  "section_break_ytql",
+  "required_documents_checklist",
+  "sb_references",
+  "estimated_fees",
+  "estimated_disbursements",
+  "cb_links",
+  "linked_sales_invoice",
+  "actual_total_invoiced",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "collapsible": 1,
+   "collapsible_depends_on": "eval:doc.docstatus==0",
+   "fieldname": "sb_contract",
+   "fieldtype": "Section Break",
+   "label": "R\u00e9daction de l'Acte"
+  },
+  {
+   "depends_on": "eval:doc.type_acte",
+   "fieldname": "acte_modeles",
+   "fieldtype": "Link",
+   "label": "Mod\u00e8le d'acte",
+   "options": "Actes_modeles"
+  },
+  {
+   "fieldname": "contenu_acte",
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Contenu de l'acte",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_references",
+   "fieldtype": "Section Break",
+   "label": "Honoraires"
+  },
+  {
+   "fieldname": "cb_links",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type_acte",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Type d'acte",
+   "options": "type_acte",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_camo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Titre de l'Acte / Affaire",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "creation_date",
+   "fieldtype": "Date",
+   "label": "Date de cr\u00e9ation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "affaire_notariale",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Affaire Notariale Li\u00e9e",
+   "options": "Affaire notariale",
+   "reqd": 1
+  },
+  {
+   "default": "Brouillon",
+   "fieldname": "status_acte",
+   "fieldtype": "Select",
+   "label": "Statut de l'Acte",
+   "options": "Brouillon\nEn Attente de Pi\u00e8ces / Infos\nR\u00e9daction en Cours\nEn R\u00e9vision Interne\nPr\u00eat \u00e0 l'Envoi Client\nEnvoy\u00e9 au Client\nEn Attente de Signature\nSign\u00e9\nEn Cours d'Enregistrement\nEnregistr\u00e9 / Finalis\u00e9\nArchiv\u00e9\nAnnul\u00e9"
+  },
+  {
+   "fieldname": "expected_signature_date",
+   "fieldtype": "Date",
+   "label": "Date de Signature Pr\u00e9vue"
+  },
+  {
+   "depends_on": "Depends On: eval:doc.status == \"Sign\u00e9\" || doc.status == \"Enregistr\u00e9 / Finalis\u00e9\"",
+   "fieldname": "actual_signature_date",
+   "fieldtype": "Date",
+   "label": "Date de Signature R\u00e9elle"
+  },
+  {
+   "depends_on": "eval:doc.status == \"Enregistr\u00e9 / Finalis\u00e9\"",
+   "fieldname": "registration_date",
+   "fieldtype": "Date",
+   "label": "Date d'Enregistrement Officiel"
+  },
+  {
+   "fieldname": "column_break_pouc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_ijvo",
+   "fieldtype": "Section Break",
+   "label": "Suggestion IA"
+  },
+  {
+   "fieldname": "ia_suggestions",
+   "fieldtype": "HTML",
+   "label": "Suggestions de l'IA",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ytql",
+   "fieldtype": "Section Break",
+   "label": "Pi\u00e8ces Justificatives de l'Acte"
+  },
+  {
+   "fieldname": "required_documents_checklist",
+   "fieldtype": "Table",
+   "label": "Liste de Contr\u00f4le des Pi\u00e8ces Requises",
+   "options": "Acte Document Requis"
+  },
+  {
+   "fieldname": "estimated_fees",
+   "fieldtype": "Currency",
+   "label": "Honoraires Estim\u00e9s"
+  },
+  {
+   "fieldname": "estimated_disbursements",
+   "fieldtype": "Currency",
+   "label": "D\u00e9bours Estim\u00e9s"
+  },
+  {
+   "fieldname": "linked_sales_invoice",
+   "fieldtype": "Link",
+   "label": "Facture G\u00e9n\u00e9r\u00e9e",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "identification_de_lacte_section",
+   "fieldtype": "Section Break",
+   "label": "Identification de l'Acte"
+  },
+  {
+   "fieldname": "section_break_qora",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "linked_sales_invoice.grand_total",
+   "fieldname": "actual_total_invoiced",
+   "fieldtype": "Currency",
+   "label": "Total Factur\u00e9 R\u00e9el",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Actes",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "acte_reference_number",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro d'Acte",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_zgwv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "Depends On: eval:doc.acte_type == \"Vente Immobili\u00e8re\" || doc.acte_type == \"Hypoth\u00e8que\" || doc.acte_type == \"Donation\" || doc.acte_type == \"Succession\"",
+   "fieldname": "involved_properties",
+   "fieldtype": "Table",
+   "label": "Bien Immobilier",
+   "options": "Acte Bien Immobilier"
+  },
+  {
+   "fieldname": "d\u00e9tails_tab",
+   "fieldtype": "Tab Break",
+   "label": "D\u00e9tails"
+  }
+ ],
+ "grid_page_length": 50,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-13 19:17:33.148419",
+ "modified_by": "Administrator",
+ "module": "NotarIA",
+ "name": "Actes",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
+}

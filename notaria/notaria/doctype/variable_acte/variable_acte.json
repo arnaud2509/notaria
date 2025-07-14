@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-03 07:47:42.850743",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "variable",
+  "label",
+  "type_de_champ",
+  "obligatoire"
+ ],
+ "fields": [
+  {
+   "fieldname": "variable",
+   "fieldtype": "Data",
+   "label": "Nom technique"
+  },
+  {
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "label": "Label visible pour l\u2019utilisateur"
+  },
+  {
+   "fieldname": "type_de_champ",
+   "fieldtype": "Select",
+   "label": "Texte, Date, Montant, Lien, etc."
+  },
+  {
+   "default": "0",
+   "fieldname": "obligatoire",
+   "fieldtype": "Check",
+   "label": "Obligatoire?"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-03 07:50:35.222502",
+ "modified_by": "Administrator",
+ "module": "NotarIA",
+ "name": "Variable Acte",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

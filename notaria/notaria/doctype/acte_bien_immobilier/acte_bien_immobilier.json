@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-05 10:54:58.574600",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "linked_property",
+  "role_in_acte",
+  "property_address_display",
+  "cadastral_info_display"
+ ],
+ "fields": [
+  {
+   "fieldname": "linked_property",
+   "fieldtype": "Link",
+   "label": "Bien Immobilier Li\u00e9",
+   "options": "Bien Immobilier"
+  },
+  {
+   "default": "Principal",
+   "fieldname": "role_in_acte",
+   "fieldtype": "Select",
+   "label": "R\u00f4le du Bien dans l'Acte",
+   "options": "Principal\nAccessoire\nD\u00e9pendance\nAutre"
+  },
+  {
+   "fetch_from": "linked_property.full_address",
+   "fieldname": "property_address_display",
+   "fieldtype": "Data",
+   "label": "Adresse du Bien",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "linked_property.cadastral_info",
+   "fieldname": "cadastral_info_display",
+   "fieldtype": "Data",
+   "label": "Infos Cadastrales du Bien",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-05 10:58:24.607546",
+ "modified_by": "Administrator",
+ "module": "NotarIA",
+ "name": "Acte Bien Immobilier",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-05 09:57:19.395841",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document_name",
+  "status",
+  "is_attached",
+  "notes",
+  "attached_acte_files",
+  "ged_acte_folder_link"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom du Document Requis",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Statut du Document",
+   "options": "Manquant\nRe\u00e7u\nV\u00e9rifi\u00e9\nNon Applicable"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_attached",
+   "fieldtype": "Check",
+   "label": "Est Attach\u00e9 ?",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes Sp\u00e9cifiques au Document"
+  },
+  {
+   "fieldname": "attached_acte_files",
+   "fieldtype": "Attach",
+   "label": "Fichiers Attach\u00e9s \u00e0 l'Acte"
+  },
+  {
+   "fieldname": "ged_acte_folder_link",
+   "fieldtype": "HTML",
+   "label": "Lien vers Dossier GED de l'Acte",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-05 10:01:08.398228",
+ "modified_by": "Administrator",
+ "module": "NotarIA",
+ "name": "Acte Document Requis",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
