@@ -244,7 +244,8 @@ app_license = "mit"
 
 fixtures = [
 
-	"Custom HTML Block"
+	"Custom HTML Block",
+    "Client Script"
 ]
 
 app_include_js = [

@@ -1,1 +1,68 @@
-[]
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Actes",
+  "enabled": 1,
+  "modified": "2025-07-14 21:54:06.909162",
+  "module": "NotarIA",
+  "name": "Contenu Acte",
+  "script": "frappe.ui.form.on('Actes', {\n  acte_modeles(frm) {\n    if (frm.doc.acte_modeles) {\n      frappe.db.get_doc('Actes_modeles', frm.doc.acte_modeles).then(doc => {\n        frm.set_value('contenu_acte', doc.text);\n      });\n    }\n  }\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Actes",
+  "enabled": 1,
+  "modified": "2025-07-14 21:54:07.038752",
+  "module": "NotarIA",
+  "name": "Filtre_modeleactes",
+  "script": "frappe.ui.form.on('Actes', {\n  refresh: function(frm) {\n    initialize_model_filter(frm);\n  },\n\n  type_acte: function(frm) {\n    update_model_filter(frm);\n    verify_model_consistency(frm);\n  },\n\n  acte_modeles: function(frm) {\n    if (!frm.doc.acte_modeles) {\n      frm.set_value('contenu_acte', '');\n      return;\n    }\n\n    get_acte_model_content(frm);\n  }\n});\n\n// ----------- FILTRES ------------\n\nfunction initialize_model_filter(frm) {\n  frm.set_query('acte_modeles', () => ({\n    filters: {\n      type_acte: frm.doc.type_acte || ''\n    }\n  }));\n}\n\nfunction update_model_filter(frm) {\n  if (!frm.doc.type_acte) return;\n  frm.set_query('acte_modeles', () => ({\n    filters: {\n      type_acte: frm.doc.type_acte\n    }\n  }));\n}\n\nfunction verify_model_consistency(frm) {\n  if (frm.doc.acte_modeles && frm.doc.type_acte) {\n    frappe.db.get_value('Actes_modeles', frm.doc.acte_modeles, 'type_acte', r => {\n      if (r.message && r.message.type_acte !== frm.doc.type_acte) {\n        frm.set_value('acte_modeles', '');\n        frm.set_value('contenu_acte', '');\n      }\n    });\n  }\n}",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Actes",
+  "enabled": 1,
+  "modified": "2025-07-14 21:54:06.958196",
+  "module": "NotarIA",
+  "name": "Zone variable",
+  "script": "frappe.ui.form.on('Actes', {\n  async type_acte(frm) {\n    if (!frm.doc.type_acte) return;\n\n    const wrapper = frm.fields_dict.zone_variables?.$wrapper;\n    if (!wrapper) {\n      frappe.msgprint(\"Le champ HTML 'zone_variables' est introuvable.\");\n      return;\n    }\n\n    wrapper.empty();\n\n    try {\n      const type_acte_doc = await frappe.db.get_doc('type_acte', frm.doc.type_acte);\n\n      for (const v of (type_acte_doc.variable || [])) {\n        const var_name_raw = v.variable || v.variable_acte || '';\n        if (!var_name_raw) continue;\n\n        const var_name = var_name_raw.toLowerCase().replace(/[^a-z0-9_]/g, '_');\n\n        // 🔍 Récupère les infos de la Variable Acte liée (dont description)\n        const variable_doc = await frappe.db.get_doc('Variable Acte', var_name_raw);\n\n        const label = variable_doc.description || var_name_raw;\n\n        const $row = $(`\n          <div class=\"mb-3\">\n            <label class=\"control-label\">${label}</label>\n            <input type=\"text\" class=\"form-control\" name=\"${var_name}\" data-variable=\"${var_name_raw}\">\n          </div>\n        `);\n\n        wrapper.append($row);\n      }\n\n    } catch (err) {\n      console.error(\"Erreur lors de la génération des variables :\", err);\n      frappe.msgprint(\"Erreur lors du chargement des variables.\");\n    }\n  }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Affaire notariale",
+  "enabled": 1,
+  "modified": "2025-07-14 21:54:06.978336",
+  "module": "NotarIA",
+  "name": "Involved_parties_automation",
+  "script": "// Custom Script for DocType: Affaire notariale\n\n// Fonction pour mettre à jour le champ client_principal\nconst updateClientPrincipal = () => {\n    let clientFound = false;\n    // Parcourir toutes les lignes de la table d'enfants 'involved_parties'\n    for (let party of cur_frm.doc.involved_parties) {\n        // Si le type de partie est \"Client Principal\"\n        if (party.party_type === \"Client Principal\") {\n            // Assigner la partie au champ client_principal de l'Affaire notariale\n            // Assurez-vous que le champ 'party' dans 'Involved Party' est bien un Link vers 'Customer' ou votre DocType client\n            cur_frm.set_value('client_principal', party.party);\n            clientFound = true;\n            break; // Arrêter après avoir trouvé le premier Client Principal\n        }\n    }\n    // Si aucun client principal n'a été trouvé, vider le champ\n    if (!clientFound) {\n        cur_frm.set_value('client_principal', null);\n    }\n};\n\n// 1. Déclencher la fonction lorsque le DocType est chargé (au cas où il y aurait déjà des parties)\nfrappe.ui.form.on('Affaire notariale', {\n    onload: function(frm) {\n        updateClientPrincipal();\n    }\n});\n\n// 2. Déclencher la fonction à chaque modification de la table involved_parties\nfrappe.ui.form.on('Involved Party', {\n    party_type: function(frm, cdt, cdn) {\n        // Se déclenche si le type de partie est modifié dans une ligne existante\n        updateClientPrincipal();\n    },\n    party: function(frm, cdt, cdn) {\n        // Se déclenche si la partie (le lien client) est modifiée dans une ligne existante\n        updateClientPrincipal();\n    },\n    involved_parties_remove: function(frm) {\n        // Se déclenche lorsqu'une ligne est supprimée de la table\n        updateClientPrincipal();\n    },\n    involved_parties_add: function(frm) {\n        // Se déclenche lorsqu'une nouvelle ligne est ajoutée à la table\n        updateClientPrincipal();\n    }\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Affaire notariale",
+  "enabled": 1,
+  "modified": "2025-07-14 21:54:06.998857",
+  "module": "NotarIA",
+  "name": "Liaison affaires et actes",
+  "script": "frappe.ui.form.on('Affaire notariale', {\n    refresh: function(frm) {\n        if (!frm.doc.name) return;\n\n        frappe.call({\n            method: \"frappe.client.get_list\",\n            args: {\n                doctype: \"Actes\",\n                filters: {\n                    affaire_notariale: frm.doc.name\n                },\n                fields: [\"name\", \"type_acte\", \"creation_date\", \"status_acte\"]\n            },\n            callback: function(r) {\n                if (!r.message || r.message.length === 0) {\n                    frm.fields_dict.actes_lies_html.$wrapper.html(\"<p>Aucun acte lié.</p>\");\n                    return;\n                }\n\n                let rows = r.message.map(actes => `\n                    <tr>\n                        <td><a href=\"/app/actes/${actes.name}\">${actes.name}</a></td>\n                        <td>${actes.type_acte || \"\"}</td>\n                        <td>${actes.creation_date || \"\"}</td>\n                        <td>${actes.status_acte || \"\"}</td>\n                    </tr>\n                `).join(\"\");\n\n                let html = `\n                    <table class=\"table table-bordered\">\n                        <thead>\n                            <tr>\n                                <th>Nom</th>\n                                <th>Type</th>\n                                <th>Date</th>\n                                <th>Statut</th>\n                            </tr>\n                        </thead>\n                        <tbody>${rows}</tbody>\n                    </table>\n                `;\n\n                frm.fields_dict.actes_lies_html.$wrapper.html(html);\n            }\n        });\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Affaire notariale",
+  "enabled": 1,
+  "modified": "2025-07-14 21:54:07.018049",
+  "module": "NotarIA",
+  "name": "Bouton créer un acte",
+  "script": "frappe.ui.form.on('Affaire notariale', {\n    refresh: function(frm) {\n        if (frm.doc.__islocal) return; // Ne pas afficher si l'affaire n'est pas encore enregistrée\n\n        frm.add_custom_button(__('Créer un Acte'), function () {\n            frappe.new_doc('Actes', {\n                affaire_notariale: frm.doc.name,\n                type_acte: \"\", // optionnel : préremplir un type\n            });\n        }, __('Actions'));\n    }\n});\n",
+  "view": "Form"
+ }
+]
