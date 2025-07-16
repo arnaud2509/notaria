@@ -245,7 +245,39 @@ app_license = "mit"
 fixtures = [
 
 	"Custom HTML Block",
-    "Client Script"
+    "Client Script",
+    {
+        "doctype": "Role",
+        "filters": {
+            
+            "role_name": ["in", [
+                "Notaire (Maître)",
+                "Notaire associé",
+                "Clerc de Notaire",
+                "Assistant Notarial",
+                "Personnel Administratif",
+                "Responsable Administratif & Financier",
+                
+                # Ajoutez ici TOUS les noms de vos rôles personnalisés
+            ]]
+        }
+    },
+    {
+        "doctype": "Custom DocPerm",
+        "filters": {
+            # Les permissions sont liées à un rôle. Nous filtrons donc les permissions
+            # qui sont attribuées à vos rôles personnalisés.
+            "role": ["in", [
+                "Notaire (Maître)",
+                "Notaire associé",
+                "Clerc de Notaire",
+                "Assistant Notarial",
+                "Personnel Administratif",
+                "Responsable Administratif & Financier",
+                # Ajoutez ici les mêmes noms de rôles que ci-dessus
+            ]]
+        }
+    }
 ]
 
 app_include_js = [
