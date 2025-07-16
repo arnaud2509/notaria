@@ -276,6 +276,32 @@ fixtures = [
                 "Responsable Administratif & Financier",
                 # Ajoutez ici les mêmes noms de rôles que ci-dessus
             ]]
+        },
+
+        "doctype": "Workflow",
+        "filters": {
+            # Les permissions sont liées à un rôle. Nous filtrons donc les permissions
+            # qui sont attribuées à vos rôles personnalisés.
+            "name": ["in", [
+                "Workflow Affaire Notariale",
+                # Ajoutez ici les mêmes noms de rôles que ci-dessus
+            ]]
+        },
+
+        "doctype": "Workflow State",
+        "filters": {
+            # Les permissions sont liées à un rôle. Nous filtrons donc les permissions
+            # qui sont attribuées à vos rôles personnalisés.
+            "workflow_state_name": ["in", [
+                "En cours",
+                "En suspens",
+                "Terminé",
+                "Annulé",
+                "Ouvert",
+                "Archivé",
+                
+                # Ajoutez ici les mêmes noms de rôles que ci-dessus
+            ]]
         }
     }
 ]
