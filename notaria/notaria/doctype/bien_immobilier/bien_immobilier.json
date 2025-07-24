@@ -15,7 +15,6 @@
   "year_of_construction",
   "column_break_qhxk",
   "building_area_sqm",
-  "current_owner",
   "section_break_kjht",
   "uid_number",
   "cadastral_info",
@@ -75,12 +74,6 @@
    "label": "Ann\u00e9e de Construction"
   },
   {
-   "fieldname": "current_owner",
-   "fieldtype": "Link",
-   "label": "Propri\u00e9taire Actuel",
-   "options": "Customer"
-  },
-  {
    "fieldname": "section_break_nesy",
    "fieldtype": "Section Break"
   },
@@ -123,7 +116,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-05 10:54:15.836928",
+ "modified": "2025-07-24 20:32:56.978181",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "Bien Immobilier",

@@ -306,6 +306,3 @@ fixtures = [
     }
 ]
 
-app_include_js = [
-    "/assets/notaria/js/chat.js", 
-]

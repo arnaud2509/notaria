@@ -10,6 +10,7 @@
   "section_break_ncyp",
   "title",
   "reference_number",
+  "demande_notariale_source",
   "column_break_iykg",
   "status",
   "opening_date",
@@ -135,7 +136,7 @@
    "fieldname": "client_principal",
    "fieldtype": "Link",
    "label": "Factur\u00e9 \u00e0",
-   "options": "Customer"
+   "options": "clients"
   },
   {
    "fieldname": "d\u00e9tails_tab",
@@ -163,13 +164,19 @@
   {
    "fieldname": "section_break_yjdz",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "demande_notariale_source",
+   "fieldtype": "Link",
+   "label": "Demande Notariale Source",
+   "options": "Demande Notariale"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-15 22:52:35.907824",
+ "modified": "2025-07-21 19:34:18.244175",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "Affaire notariale",

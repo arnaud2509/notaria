@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-23 07:34:27.985979",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_idff",
+  "client",
+  "amended_from",
+  "column_break_cvix",
+  "first_name",
+  "last_name",
+  "section_break_gtyn",
+  "email",
+  "phone",
+  "info_suppl\u00e9mentaires_section",
+  "role",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_idff",
+   "fieldtype": "Section Break",
+   "label": "Identit\u00e9"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Coordonnee Notariale",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Lien vers client",
+   "options": "Client Notarial"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "Pr\u00e9nom"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Nom"
+  },
+  {
+   "fieldname": "section_break_gtyn",
+   "fieldtype": "Section Break",
+   "label": "M\u00e9thode de contact"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "E-mail",
+   "options": "Email"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "label": "T\u00e9l\u00e9phone"
+  },
+  {
+   "fieldname": "column_break_cvix",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "info_suppl\u00e9mentaires_section",
+   "fieldtype": "Section Break",
+   "label": "Info suppl\u00e9mentaires"
+  },
+  {
+   "fieldname": "role",
+   "fieldtype": "Select",
+   "label": "R\u00f4le",
+   "options": "Mandataire\nh\u00e9ritier\nrepr\u00e9sentant"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarques"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-23 21:20:06.933753",
+ "modified_by": "Administrator",
+ "module": "NotarIA",
+ "name": "Coordonnee Notariale",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
