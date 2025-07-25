@@ -8,10 +8,6 @@
    "label": "BlockTypeActes"
   },
   {
-   "custom_block_name": "Demande notariale",
-   "label": "Demande notariale"
-  },
-  {
    "custom_block_name": "BlockClient",
    "label": "BlockClient"
   },
@@ -34,7 +30,7 @@
  "is_hidden": 0,
  "label": "NotarIA",
  "links": [],
- "modified": "2025-07-20 11:34:58.133799",
+ "modified": "2025-07-24 22:00:27.470958",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "NotarIA",

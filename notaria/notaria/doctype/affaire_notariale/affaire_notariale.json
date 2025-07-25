@@ -136,7 +136,7 @@
    "fieldname": "client_principal",
    "fieldtype": "Link",
    "label": "Factur\u00e9 \u00e0",
-   "options": "clients"
+   "options": "Client Notarial"
   },
   {
    "fieldname": "d\u00e9tails_tab",
@@ -167,16 +167,20 @@
   },
   {
    "fieldname": "demande_notariale_source",
-   "fieldtype": "Link",
-   "label": "Demande Notariale Source",
-   "options": "Demande Notariale"
+   "fieldtype": "Data",
+   "label": "Demande Notariale Source"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2025-07-21 19:34:18.244175",
+ "links": [
+  {
+   "link_doctype": "Actes",
+   "link_fieldname": "affaire_notariale"
+  }
+ ],
+ "modified": "2025-07-25 12:53:35.286338",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "Affaire notariale",

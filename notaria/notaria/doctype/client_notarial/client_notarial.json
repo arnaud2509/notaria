@@ -1,28 +1,38 @@
 {
  "actions": [],
- "allow_rename": 1,
- "creation": "2025-07-22 17:25:38.707738",
+ "allow_import": 1,
+ "autoname": "field:client_num",
+ "color": "blue",
+ "creation": "2025-07-24 22:27:36.621870",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_ogtk",
   "client_type",
   "amended_from",
+  "client_num",
   "column_break_bstc",
-  "salutation",
+  "client_contact",
+  "section_break_icnn",
   "last_name",
   "first_name",
-  "section_break_lzwd",
-  "birth_date",
-  "column_break_shhr",
-  "nationality",
-  "section_break_xyjx",
-  "address"
+  "address",
+  "column_break_rlci",
+  "phone",
+  "email"
  ],
  "fields": [
   {
    "fieldname": "section_break_ogtk",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Informations"
+  },
+  {
+   "fieldname": "client_type",
+   "fieldtype": "Select",
+   "label": "Type de client",
+   "options": "Personne physique\nPersonne morale"
   },
   {
    "fieldname": "amended_from",
@@ -35,68 +45,92 @@
    "search_index": 1
   },
   {
-   "fieldname": "salutation",
-   "fieldtype": "Select",
-   "label": "Civilit\u00e9",
-   "options": "M.\nMme\nDr.\nMe"
-  },
-  {
-   "fieldname": "last_name",
-   "fieldtype": "Data",
-   "label": "Nom"
-  },
-  {
-   "fieldname": "first_name",
-   "fieldtype": "Data",
-   "label": "Pr\u00e9nom"
-  },
-  {
-   "fieldname": "client_type",
-   "fieldtype": "Select",
-   "label": "Type de client",
-   "options": "Personne physique\nPersonne morale"
-  },
-  {
-   "fieldname": "birth_date",
-   "fieldtype": "Date",
-   "label": "Date de naissance"
-  },
-  {
-   "fieldname": "nationality",
-   "fieldtype": "Link",
-   "label": "Nationalit\u00e9",
-   "options": "Country"
-  },
-  {
-   "fieldname": "address",
-   "fieldtype": "Small Text",
-   "label": "Adresse"
-  },
-  {
    "fieldname": "column_break_bstc",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break_lzwd",
-   "fieldtype": "Section Break"
+   "fetch_from": "client_contact.last_name",
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Nom",
+   "read_only": 1
   },
   {
-   "fieldname": "column_break_shhr",
+   "fetch_from": "client_contact.first_name",
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "Pr\u00e9nom",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "client_contact.address",
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Adresse"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Client Notarial",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "client_contact != \"\";",
+   "fieldname": "section_break_icnn",
+   "fieldtype": "Section Break",
+   "label": "Adresse et contact"
+  },
+  {
+   "fetch_from": "client_contact.phone",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "T\u00e9l\u00e9phone",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rlci",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break_xyjx",
-   "fieldtype": "Section Break"
+   "fetch_from": "client_contact.email_id",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "E-mail",
+   "options": "Email"
+  },
+  {
+   "fieldname": "client_num",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Num\u00e9ro de client",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "client_contact",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Contact"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
- "links": [],
- "modified": "2025-07-24 17:40:02.438705",
+ "links": [
+  {
+   "link_doctype": "Affaire notariale",
+   "link_fieldname": "client_principal"
+  }
+ ],
+ "modified": "2025-07-25 13:07:26.846761",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "Client Notarial",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -109,12 +143,14 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "client_contact"
 }
