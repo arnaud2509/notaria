@@ -2,6 +2,17 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
+  "dt": "Identity documents",
+  "enabled": 1,
+  "modified": "2025-07-25 17:16:16.275088",
+  "module": "NotarIA",
+  "name": "Identification client",
+  "script": "frappe.ui.form.on('Identity documents', {\n    refresh(frm) {\n        // Ajoute le bouton si un document est déjà présent au chargement\n        if (frm.doc.document_upload && !frm.is_new()) {\n            add_analyze_button(frm);\n        }\n    },\n\n    document_upload(frm) {\n        // Ajoute le bouton dès qu’un fichier est uploadé\n        if (frm.doc.document_upload && !frm.is_new()) {\n            add_analyze_button(frm);\n        }\n    }\n});\n\nfunction add_analyze_button(frm) {\n    frm.add_custom_button('Analyser le document', () => {\n        frappe.call({\n            method: 'notaria.notaria.doctype.identity_documents.identity_documents.analyze_identity',\n            args: {\n                docname: frm.doc.name\n            },\n            callback: function (r) {\n                if (!r.exc) {\n                    frappe.show_alert('✅ Analyse terminée. Données extraites.');\n                    frm.reload_doc();\n                } else {\n                    frappe.msgprint(__('❌ Une erreur est survenue pendant l’analyse.'));\n                }\n            }\n        });\n    }, 'Actions');\n}",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
   "dt": "Actes",
   "enabled": 1,
   "modified": "2025-07-14 21:54:06.909162",

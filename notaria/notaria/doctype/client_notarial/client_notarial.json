@@ -10,7 +10,6 @@
  "field_order": [
   "section_break_ogtk",
   "client_type",
-  "amended_from",
   "client_num",
   "column_break_bstc",
   "client_contact",
@@ -33,16 +32,6 @@
    "fieldtype": "Select",
    "label": "Type de client",
    "options": "Personne physique\nPersonne morale"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Client Notarial",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   },
   {
    "fieldname": "column_break_bstc",
@@ -69,18 +58,8 @@
    "label": "Adresse"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Client Notarial",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
    "collapsible": 1,
-   "depends_on": "client_contact != \"\";",
+   "depends_on": "\"eval:doc.client_contact\"",
    "fieldname": "section_break_icnn",
    "fieldtype": "Section Break",
    "label": "Adresse et contact"
@@ -114,19 +93,14 @@
   {
    "fieldname": "client_contact",
    "fieldtype": "Link",
-   "label": "Client",
+   "label": "Contact",
    "options": "Contact"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [
-  {
-   "link_doctype": "Affaire notariale",
-   "link_fieldname": "client_principal"
-  }
- ],
- "modified": "2025-07-25 13:07:26.846761",
+ "links": [],
+ "modified": "2025-07-28 19:12:55.464240",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "Client Notarial",
@@ -141,16 +115,28 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "System Manager",
+   "role": "Notaire (Ma\u00eetre)",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Notaire associ\u00e9",
    "share": 1,
    "write": 1
   }
  ],
- "quick_entry": 1,
  "row_format": "Dynamic",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "client_contact"
+ "title_field": "client_contact",
+ "track_changes": 1
 }

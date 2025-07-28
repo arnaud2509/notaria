@@ -1,25 +1,22 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "{{ document_type }}-{{ first_name }}-{{ last_name }}",
  "creation": "2025-07-25 13:12:14.414483",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "identity_file",
+  "document_upload",
+  "column_break_jiky",
+  "document_type",
   "first_name",
   "last_name",
   "document_number",
   "birth_date",
-  "document_type",
-  "parsed",
+  "section_break_nhzc",
   "linked_case"
  ],
  "fields": [
-  {
-   "fieldname": "identity_file",
-   "fieldtype": "Attach",
-   "label": "Document"
-  },
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
@@ -33,7 +30,7 @@
   {
    "fieldname": "document_number",
    "fieldtype": "Data",
-   "label": "N de passeport"
+   "label": "N de document"
   },
   {
    "fieldname": "birth_date",
@@ -43,28 +40,37 @@
   {
    "fieldname": "document_type",
    "fieldtype": "Select",
-   "label": "Type de document"
-  },
-  {
-   "default": "0",
-   "fieldname": "parsed",
-   "fieldtype": "Check",
-   "label": "Analyse effectu\u00e9e"
+   "label": "Type de document",
+   "options": "Carte d'identit\u00e9\nPasseport\nPermis de conduire\nPermis de r\u00e9sidence"
   },
   {
    "fieldname": "linked_case",
    "fieldtype": "Link",
-   "label": "Lien vers le dossier",
+   "label": "Lien vers le client",
    "options": "Client Notarial"
+  },
+  {
+   "fieldname": "document_upload",
+   "fieldtype": "Attach",
+   "label": "Upload"
+  },
+  {
+   "fieldname": "column_break_jiky",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_nhzc",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-25 13:16:12.181429",
+ "modified": "2025-07-26 09:21:54.583530",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "Identity documents",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
