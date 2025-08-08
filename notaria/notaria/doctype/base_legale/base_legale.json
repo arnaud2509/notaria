@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-04 07:21:01.697503",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "source_legale",
+  "code_article",
+  "libelle",
+  "lien_officiel"
+ ],
+ "fields": [
+  {
+   "fieldname": "code_article",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Code / article"
+  },
+  {
+   "fieldname": "libelle",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Libell\u00e9"
+  },
+  {
+   "fieldname": "lien_officiel",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Lien officiel"
+  },
+  {
+   "fieldname": "source_legale",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Source l\u00e9gale",
+   "options": "Code civil (CC)\nCode des obligations (CO)\nLDIP\nLFAIE\nLDFR\nLoi cantonale\nOrdonnance\nAutre"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-04 22:04:54.311126",
+ "modified_by": "Administrator",
+ "module": "NotarIA",
+ "name": "Base legale",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

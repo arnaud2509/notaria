@@ -8,6 +8,7 @@
  "document_type": "Document",
  "engine": "InnoDB",
  "field_order": [
+  "categorie",
   "type_acte",
   "titre",
   "text"
@@ -21,19 +22,30 @@
   {
    "fieldname": "type_acte",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Type d'acte",
-   "options": "type_acte"
+   "options": "Type Acte",
+   "reqd": 1
   },
   {
    "fieldname": "titre",
    "fieldtype": "Data",
-   "label": "Nom du mod\u00e8le"
+   "in_list_view": 1,
+   "label": "Nom du mod\u00e8le",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "type_acte.type_juridique",
+   "fieldname": "categorie",
+   "fieldtype": "Data",
+   "label": "Cat\u00e9gorie",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-14 22:34:36.300589",
+ "modified": "2025-08-04 22:12:42.102758",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "Actes_modeles",

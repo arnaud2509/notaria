@@ -9,11 +9,12 @@
  "field_order": [
   "actif",
   "nom",
-  "description",
-  "variable",
   "type_juridique",
+  "domaine_application",
   "code_type_acte",
-  "select"
+  "description",
+  "base_legale",
+  "document_requis"
  ],
  "fields": [
   {
@@ -30,20 +31,14 @@
   },
   {
    "fieldname": "description",
-   "fieldtype": "Small Text"
-  },
-  {
-   "allow_in_quick_entry": 1,
-   "fieldname": "variable",
-   "fieldtype": "Table",
-   "label": "variable",
-   "options": "Type Acte Variable"
+   "fieldtype": "Small Text",
+   "label": "Description"
   },
   {
    "fieldname": "type_juridique",
    "fieldtype": "Select",
    "label": "Type juridique",
-   "options": "Patrimonial\nSuccessoral\nSoci\u00e9t\u00e9\nMatrimonial\nObligations\nGouvernance"
+   "options": "Patrimonial\nSuccessoral\nSoci\u00e9t\u00e9\nMatrimonial\nObligations\nGouvernance\nContrat"
   },
   {
    "fieldname": "code_type_acte",
@@ -51,19 +46,31 @@
    "label": "Code interne"
   },
   {
-   "fieldname": "select",
+   "fieldname": "domaine_application",
    "fieldtype": "Select",
    "label": "Domaine d'application",
    "options": "Immobilier\nFamille\nSuccession\nSoci\u00e9t\u00e9\nCommercial\nPouvoir / Procuration\nContrat\nFiscalit\u00e9\nDivers"
+  },
+  {
+   "fieldname": "base_legale",
+   "fieldtype": "Table",
+   "label": "Base(s) l\u00e9gale(s)",
+   "options": "Base legale"
+  },
+  {
+   "fieldname": "document_requis",
+   "fieldtype": "Table",
+   "label": "Document(s) requis",
+   "options": "Acte Document Requis"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-03 11:58:12.229808",
+ "modified": "2025-08-04 20:55:48.457063",
  "modified_by": "Administrator",
  "module": "NotarIA",
- "name": "type_acte",
+ "name": "Type Acte",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

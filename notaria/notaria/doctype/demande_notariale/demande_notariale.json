@@ -1,0 +1,136 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:DEM-{#####}",
+ "creation": "2025-07-29 07:38:59.135061",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "client_type",
+  "last_name",
+  "first_name",
+  "contact",
+  "column_break_tnki",
+  "phone",
+  "email",
+  "section_break_ueii",
+  "address",
+  "code_postal",
+  "section_break_qfsi",
+  "act_type",
+  "demand_description"
+ ],
+ "fields": [
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Nom"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Pr\u00e9nom"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "T\u00e9l\u00e9phone"
+  },
+  {
+   "fieldname": "client_type",
+   "fieldtype": "Select",
+   "label": "Type de client",
+   "options": "Personne morale\nPersonne physique",
+   "reqd": 1
+  },
+  {
+   "fieldname": "act_type",
+   "fieldtype": "Link",
+   "label": "Type d'acte",
+   "options": "Type Acte"
+  },
+  {
+   "fieldname": "demand_description",
+   "fieldtype": "Long Text",
+   "label": "Description de la demande"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Adresse"
+  },
+  {
+   "fieldname": "column_break_tnki",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "E-mail",
+   "options": "Email"
+  },
+  {
+   "fieldname": "section_break_ueii",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "code_postal",
+   "fieldtype": "Data",
+   "label": "Code postal"
+  },
+  {
+   "fieldname": "section_break_qfsi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "contact",
+   "options": "Contact"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Contact",
+   "link_fieldname": "last_name",
+   "table_fieldname": "email_ids"
+  },
+  {
+   "link_doctype": "Affaire notariale",
+   "link_fieldname": "demande_notariale_source"
+  }
+ ],
+ "modified": "2025-08-04 18:51:18.730812",
+ "modified_by": "Administrator",
+ "module": "NotarIA",
+ "name": "Demande Notariale",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -10,8 +10,7 @@
   "status",
   "is_attached",
   "notes",
-  "attached_acte_files",
-  "ged_acte_folder_link"
+  "attached_acte_files"
  ],
  "fields": [
   {
@@ -22,6 +21,7 @@
    "reqd": 1
   },
   {
+   "bold": 1,
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Statut du Document",
@@ -43,19 +43,13 @@
    "fieldname": "attached_acte_files",
    "fieldtype": "Attach",
    "label": "Fichiers Attach\u00e9s \u00e0 l'Acte"
-  },
-  {
-   "fieldname": "ged_acte_folder_link",
-   "fieldtype": "HTML",
-   "label": "Lien vers Dossier GED de l'Acte",
-   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-05 10:01:08.398228",
+ "modified": "2025-08-04 21:42:23.231024",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "Acte Document Requis",

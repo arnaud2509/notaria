@@ -1,7 +1,7 @@
 # Copyright (c) 2025, Frappe Technologies Pvt. Ltd. and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
@@ -12,7 +12,7 @@ class Affairenotariale(Document):
 	from typing import TYPE_CHECKING
 
 	if TYPE_CHECKING:
-		from erpnext.notaria.doctype.involved_party.involved_party import InvolvedParty
+		from notaria.notaria.doctype.involved_party.involved_party import InvolvedParty
 		from frappe.types import DF
 
 		actes: DF.Link | None
@@ -29,3 +29,16 @@ class Affairenotariale(Document):
 		title: DF.Data
 	# end: auto-generated types
 	pass
+
+@frappe.whitelist()
+def get_document_requis_for_type(type_acte):
+    type_doc = frappe.get_doc("Type Acte", type_acte)
+    document = []
+    for d in type_doc.document_requis:
+        document.append({
+            "document_name": d.document_name,
+            "status": "Manquant",
+            "notes": d.notes or ""
+        })
+    return document
+

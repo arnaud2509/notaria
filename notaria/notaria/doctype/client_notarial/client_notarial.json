@@ -19,7 +19,13 @@
   "address",
   "column_break_rlci",
   "phone",
-  "email"
+  "email",
+  "documents_section",
+  "pi\u00e8ce_didentit\u00e9",
+  "donn\u00e9es_bancaires_tab",
+  "bank",
+  "account_owner",
+  "iban"
  ],
  "fields": [
   {
@@ -55,11 +61,12 @@
    "fetch_from": "client_contact.address",
    "fieldname": "address",
    "fieldtype": "Data",
-   "label": "Adresse"
+   "label": "Adresse",
+   "read_only": 1
   },
   {
    "collapsible": 1,
-   "depends_on": "\"eval:doc.client_contact\"",
+   "depends_on": "eval:doc.client_contact;",
    "fieldname": "section_break_icnn",
    "fieldtype": "Section Break",
    "label": "Adresse et contact"
@@ -94,13 +101,45 @@
    "fieldname": "client_contact",
    "fieldtype": "Link",
    "label": "Contact",
-   "options": "Contact"
+   "options": "Contact",
+   "search_index": 1
+  },
+  {
+   "fieldname": "documents_section",
+   "fieldtype": "Section Break",
+   "label": "Documents"
+  },
+  {
+   "fieldname": "pi\u00e8ce_didentit\u00e9",
+   "fieldtype": "Table",
+   "label": "Pi\u00e8ce d'identit\u00e9",
+   "options": "Identity documents"
+  },
+  {
+   "fieldname": "donn\u00e9es_bancaires_tab",
+   "fieldtype": "Tab Break",
+   "label": "Donn\u00e9es bancaires"
+  },
+  {
+   "fieldname": "iban",
+   "fieldtype": "Data",
+   "label": "IBAN"
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Data",
+   "label": "Banque"
+  },
+  {
+   "fieldname": "account_owner",
+   "fieldtype": "Data",
+   "label": "Titulaire du compte"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-28 19:12:55.464240",
+ "modified": "2025-08-03 22:41:45.011471",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "Client Notarial",

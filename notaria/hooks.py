@@ -242,6 +242,13 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+doc_events = {
+    "Demande Notariale": {
+        "after_insert": "notaria.notaria.doctype.demande_notariale.handler.creer_donnees"
+    }
+}
+
+
 fixtures = [
 
 	"Custom HTML Block",

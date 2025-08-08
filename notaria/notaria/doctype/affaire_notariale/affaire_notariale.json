@@ -7,34 +7,30 @@
  "engine": "InnoDB",
  "field_order": [
   "d\u00e9tails_tab",
+  "document_progress_html",
+  "identity_documents_html",
   "section_break_ncyp",
   "title",
   "reference_number",
-  "demande_notariale_source",
   "column_break_iykg",
+  "type_acte",
   "status",
   "opening_date",
   "closing_date",
-  "section_break_gyib",
-  "notaire_responsable",
-  "column_break_gltu",
-  "assistant_responsable",
   "section_break_zsro",
-  "involved_parties",
-  "amended_from",
+  "notaire_responsable",
   "client_principal",
-  "section_break_ytof",
-  "attached_general_files",
-  "ged_folder_link",
-  "section_break_zejw",
+  "involved_parties",
+  "documents_li\u00e9s_section",
+  "document_requis",
   "actes_lies_html",
-  "section_break_yjdz",
-  "actes"
+  "amended_from"
  ],
  "fields": [
   {
    "fieldname": "section_break_ncyp",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Informations g\u00e9n\u00e9rales"
   },
   {
    "fieldname": "reference_number",
@@ -74,10 +70,6 @@
    "label": "Date de Cl\u00f4ture du Dossier"
   },
   {
-   "fieldname": "section_break_gyib",
-   "fieldtype": "Section Break"
-  },
-  {
    "fetch_from": "assistant_responsable.full_name",
    "fieldname": "notaire_responsable",
    "fieldtype": "Link",
@@ -86,19 +78,9 @@
    "reqd": 1
   },
   {
-   "fieldname": "column_break_gltu",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fetch_from": "notaire_responsable.full_name",
-   "fieldname": "assistant_responsable",
-   "fieldtype": "Link",
-   "label": "Assistant / Clerc Responsable",
-   "options": "User"
-  },
-  {
    "fieldname": "section_break_zsro",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Parties"
   },
   {
    "fieldname": "involved_parties",
@@ -118,24 +100,9 @@
    "search_index": 1
   },
   {
-   "fieldname": "section_break_ytof",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "attached_general_files",
-   "fieldtype": "Attach",
-   "label": "Fichiers G\u00e9n\u00e9raux du Dossier"
-  },
-  {
-   "fieldname": "ged_folder_link",
-   "fieldtype": "HTML",
-   "label": "Lien Vers le Dossier GED",
-   "read_only": 1
-  },
-  {
    "fieldname": "client_principal",
    "fieldtype": "Link",
-   "label": "Factur\u00e9 \u00e0",
+   "label": "Client principal",
    "options": "Client Notarial"
   },
   {
@@ -144,43 +111,42 @@
    "label": "D\u00e9tails"
   },
   {
-   "fieldname": "actes",
-   "fieldtype": "Link",
-   "label": "Actes",
-   "link_filters": "[[\"Actes\",\"affaire_notariale\",\"=\",\"title\"]]",
-   "options": "Actes"
-  },
-  {
-   "fieldname": "section_break_zejw",
-   "fieldtype": "Section Break",
-   "label": "Actes associ\u00e9s"
-  },
-  {
    "depends_on": "eval:doc.name",
    "fieldname": "actes_lies_html",
    "fieldtype": "HTML",
    "label": "Actes li\u00e9s"
   },
   {
-   "fieldname": "section_break_yjdz",
-   "fieldtype": "Section Break"
+   "fieldname": "document_requis",
+   "fieldtype": "Table",
+   "label": "Documents requis",
+   "options": "Acte Document Requis"
   },
   {
-   "fieldname": "demande_notariale_source",
-   "fieldtype": "Data",
-   "label": "Demande Notariale Source"
+   "fieldname": "type_acte",
+   "fieldtype": "Link",
+   "label": "Type",
+   "options": "Type Acte"
+  },
+  {
+   "fieldname": "documents_li\u00e9s_section",
+   "fieldtype": "Section Break",
+   "label": "Liaisons"
+  },
+  {
+   "fieldname": "document_progress_html",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "identity_documents_html",
+   "fieldtype": "HTML"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [
-  {
-   "link_doctype": "Actes",
-   "link_fieldname": "affaire_notariale"
-  }
- ],
- "modified": "2025-07-25 12:53:35.286338",
+ "links": [],
+ "modified": "2025-08-06 06:56:55.178071",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "Affaire notariale",

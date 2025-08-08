@@ -50,6 +50,7 @@
    "options": "Client Notarial"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "document_upload",
    "fieldtype": "Attach",
    "label": "Upload"
@@ -66,7 +67,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-26 09:21:54.583530",
+ "modified": "2025-08-03 22:45:26.775159",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "Identity documents",
@@ -86,6 +87,7 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",

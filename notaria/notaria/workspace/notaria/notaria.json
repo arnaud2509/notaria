@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"HcMRVwmWbg\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"BlockTypeActes\",\"col\":4}},{\"id\":\"lkpyCg9AYa\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"BlockClient\",\"col\":4}},{\"id\":\"8wbT2ixdtu\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Affaires notariales\",\"col\":4}},{\"id\":\"DqI9EvZoR2\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"LhA-kKZO_0\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"AgendaBlock\",\"col\":6}},{\"id\":\"YzY-bGeMw_\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Demande notariale\",\"col\":4}}]",
+ "content": "[{\"id\":\"HcMRVwmWbg\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"BlockTypeActes\",\"col\":4}},{\"id\":\"lkpyCg9AYa\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"BlockClient\",\"col\":4}},{\"id\":\"8wbT2ixdtu\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Affaires notariales\",\"col\":4}},{\"id\":\"DqI9EvZoR2\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"LhA-kKZO_0\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"AgendaBlock\",\"col\":6}}]",
  "creation": "2025-06-29 16:28:42.479037",
  "custom_blocks": [
   {
@@ -30,7 +30,7 @@
  "is_hidden": 0,
  "label": "NotarIA",
  "links": [],
- "modified": "2025-07-24 22:00:27.470958",
+ "modified": "2025-07-28 22:15:52.887687",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "NotarIA",

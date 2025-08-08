@@ -35,9 +35,9 @@
   "estimated_fees",
   "estimated_disbursements",
   "cb_links",
-  "linked_sales_invoice",
   "actual_total_invoiced",
-  "amended_from"
+  "amended_from",
+  "email"
  ],
  "fields": [
   {
@@ -76,7 +76,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Type d'acte",
-   "options": "type_acte",
+   "options": "Type Acte",
    "reqd": 1
   },
   {
@@ -103,14 +103,15 @@
    "in_list_view": 1,
    "label": "Affaire Notariale Li\u00e9e",
    "options": "Affaire notariale",
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "default": "Brouillon",
    "fieldname": "status_acte",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "label": "Statut de l'Acte",
-   "options": "Brouillon\nEn Attente de Pi\u00e8ces / Infos\nR\u00e9daction en Cours\nEn R\u00e9vision Interne\nPr\u00eat \u00e0 l'Envoi Client\nEnvoy\u00e9 au Client\nEn Attente de Signature\nSign\u00e9\nEn Cours d'Enregistrement\nEnregistr\u00e9 / Finalis\u00e9\nArchiv\u00e9\nAnnul\u00e9"
+   "read_only": 1
   },
   {
    "fieldname": "expected_signature_date",
@@ -167,13 +168,6 @@
    "label": "D\u00e9bours Estim\u00e9s"
   },
   {
-   "fieldname": "linked_sales_invoice",
-   "fieldtype": "Link",
-   "label": "Facture G\u00e9n\u00e9r\u00e9e",
-   "options": "Sales Invoice",
-   "read_only": 1
-  },
-  {
    "fieldname": "identification_de_lacte_section",
    "fieldtype": "Section Break",
    "label": "Identification de l'Acte"
@@ -221,12 +215,18 @@
    "fieldname": "d\u00e9tails_tab",
    "fieldtype": "Tab Break",
    "label": "D\u00e9tails"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "email",
+   "options": "Email"
   }
  ],
  "grid_page_length": 50,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-13 19:17:33.148419",
+ "modified": "2025-08-04 18:51:18.442145",
  "modified_by": "Administrator",
  "module": "NotarIA",
  "name": "Actes",
