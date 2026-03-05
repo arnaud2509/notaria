@@ -1,0 +1,29 @@
+{
+ "active": 1,
+ "document_type": "Affaire Notariale",
+ "doctype": "Workflow",
+ "is_active": 1,
+ "name": "Workflow Affaire Notariale",
+ "override_status": 1,
+ "send_email_alert": 0,
+ "states": [
+  {"allow_edit": "Notaire (Maître)", "doc_status": "0", "doctype": "Workflow Document State", "state": "Demande", "style": "Primary"},
+  {"allow_edit": "Clerc de Notaire", "doc_status": "0", "doctype": "Workflow Document State", "state": "Instruction", "style": "Primary"},
+  {"allow_edit": "Notaire (Maître)", "doc_status": "0", "doctype": "Workflow Document State", "state": "Revue", "style": "Warning"},
+  {"allow_edit": "Notaire (Maître)", "doc_status": "0", "doctype": "Workflow Document State", "state": "Signature", "style": "Warning"},
+  {"allow_edit": "Notaire (Maître)", "doc_status": "1", "doctype": "Workflow Document State", "state": "Enregistré", "style": "Success"},
+  {"allow_edit": "Notaire (Maître)", "doc_status": "2", "doctype": "Workflow Document State", "state": "Annulé", "style": "Danger"}
+ ],
+ "transitions": [
+  {"action": "Démarrer l'instruction", "allowed": "Notaire (Maître)", "allow_self_approval": 1, "doctype": "Workflow Transition", "next_state": "Instruction", "state": "Demande"},
+  {"action": "Soumettre pour revue", "allowed": "Clerc de Notaire", "allow_self_approval": 1, "doctype": "Workflow Transition", "next_state": "Revue", "state": "Instruction"},
+  {"action": "Retourner en instruction", "allowed": "Notaire (Maître)", "allow_self_approval": 1, "doctype": "Workflow Transition", "next_state": "Instruction", "state": "Revue"},
+  {"action": "Approuver pour signature", "allowed": "Notaire (Maître)", "allow_self_approval": 1, "doctype": "Workflow Transition", "next_state": "Signature", "state": "Revue"},
+  {"action": "Enregistrer l'acte", "allowed": "Notaire (Maître)", "allow_self_approval": 1, "doctype": "Workflow Transition", "next_state": "Enregistré", "state": "Signature"},
+  {"action": "Annuler", "allowed": "Notaire (Maître)", "allow_self_approval": 1, "doctype": "Workflow Transition", "next_state": "Annulé", "state": "Demande"},
+  {"action": "Annuler", "allowed": "Notaire (Maître)", "allow_self_approval": 1, "doctype": "Workflow Transition", "next_state": "Annulé", "state": "Instruction"},
+  {"action": "Annuler", "allowed": "Notaire (Maître)", "allow_self_approval": 1, "doctype": "Workflow Transition", "next_state": "Annulé", "state": "Revue"}
+ ],
+ "workflow_name": "Workflow Affaire Notariale",
+ "workflow_state_field": "status"
+}
